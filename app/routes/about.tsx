@@ -1,5 +1,5 @@
 import ProfileBox from '../components/profile/profileBox';
-import PrintCharBy from '~/components/common/printCharBy';
+import PrintCharBy from '../components/common/printCharBy';
 import { useState } from 'react';
 
 export default function About({ preRender = false }: {preRender?: boolean}) {

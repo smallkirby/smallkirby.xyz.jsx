@@ -1,4 +1,4 @@
-import type { Like } from '../../../typings/likes';
+import type { Like } from 'typings/likes';
 
 const likeEntSentence = (like: Like) => (
   like.ents.map((ent, ix) => {

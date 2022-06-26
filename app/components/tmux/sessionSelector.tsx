@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import type { RouteEntry } from '../../../typings/route';
-import { routeEntries } from '../../../data/routs';
+import type { RouteEntry } from 'typings/route';
+import { routeEntries } from 'data/routs';
 
 function SessionSelectorEntry(props: {ent: RouteEntry, index: number, selected: Boolean, isCurrentPage: Boolean}) {
   return (

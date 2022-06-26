@@ -1,4 +1,4 @@
-import type { Pronunciation } from '../../../typings/pronunciation';
+import type { Pronunciation } from 'typings/pronunciation';
 
 const generateParagraphs = (pron: Pronunciation) => (
   pron.ents.map((ent, ix) => {

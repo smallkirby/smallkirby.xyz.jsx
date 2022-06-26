@@ -1,4 +1,4 @@
-import type { Like } from '../typings/likes';
+import type { Like } from 'typings/likes';
 
 export const dislikes: Like[] = [
   {
