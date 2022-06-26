@@ -13,6 +13,8 @@ import {
 } from '@remix-run/react';
 import Header from './components/common/header';
 import Footer from './components/common/footer';
+import TmuxPane from './components/tmux/tmuxPane';
+import TmuxOpener from './components/tmux/tmuxOpener';
 
 export const links: LinksFunction = () => {
   return [{ rel: 'stylesheet', href: styles }];
@@ -37,6 +39,8 @@ export default function App() {
     }
   }, [location.pathname] );
 
+  const [isTmuxOpen, setIsTmuxOpen] = useState( true );
+
   return (
     <html lang="en">
       <head>
@@ -46,8 +50,21 @@ export default function App() {
       <body>
         <Header title={title} />
 
-        <div className='py-8 px-2'>
-          <Outlet />
+        <div className='flex h-screen'>
+          <div
+            className={
+              `sticky py-8 px-2 border-r-2 border-[#ebdbb2] overflow-y-scroll overflow-x-scroll
+              ${isTmuxOpen ? 'w-1/4' : 'w-10'}`}
+          >
+            {isTmuxOpen && <TmuxPane />}
+            <div className='absolute right-0 top-1/2'>
+              <TmuxOpener stateChanged={(open) => setIsTmuxOpen(open)}/>
+            </div>
+          </div>
+
+          <div className='py-8 px-4 w-full overflow-y-scroll overflow-x-scroll'>
+            <Outlet />
+          </div>
         </div>
         <ScrollRestoration />
         <Scripts />

@@ -107,7 +107,7 @@ export default function SessionSelector(props: {quitCallback: () => void}) {
 
   return (
     <div className="fixed z-50 mt-8 w-full h-full bg-[#32302f] px-4 pt-2 pb-8">
-      <h1 className="text-[#34E2E2] text-lg">Session Control</h1>
+      <h1 className="text-[#84A87F] text-lg">Session Control</h1>
 
       <div className="flex-col ml-4 mt-2 h-2/5">
         {sessionEntries.map((ent, ix) => (
