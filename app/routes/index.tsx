@@ -13,6 +13,9 @@ export default function Index() {
         <li>
           <Link to='/dislikes'>Dislikes</Link>
         </li>
+        <li>
+          <Link to='/pronunciation'>Pronunciation</Link>
+        </li>
       </ul>
     </div>
   );
