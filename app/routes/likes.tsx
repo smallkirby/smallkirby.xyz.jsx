@@ -1,6 +1,8 @@
 import type { Like } from '../../typings/likes';
 import { likes as likesData } from '../../data/likes';
 import LikeParagraph from '../components/likes/LikeParagraph';
+import PrintCharBy from '~/components/common/printCharBy';
+import { useState } from 'react';
 
 const generateParagraphs = (likes: Like[]) => (
   likes.map((like, ix) => {
@@ -10,11 +12,19 @@ const generateParagraphs = (likes: Like[]) => (
   })
 );
 
-
 export default function Likes() {
+  const command = '$ find /home/smallkirby/likes/ -type f | xargs grep like | grep -v lazy ';
+  const [shown, setShown] = useState(false);
+
   return (
     <div>
-      {generateParagraphs(likesData)}
+      <PrintCharBy str={command} intervalMs={50} callback={() => {
+        setShown(true);
+      }} />
+
+      {shown &&
+        generateParagraphs(likesData)
+      }
     </div>
   );
 };

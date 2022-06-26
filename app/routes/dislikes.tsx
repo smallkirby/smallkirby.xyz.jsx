@@ -1,6 +1,8 @@
 import type { Like } from '../../typings/likes';
 import { dislikes as dislikesData } from '../../data/dislikes';
 import LikeParagraph from '../components/likes/LikeParagraph';
+import PrintCharBy from '~/components/common/printCharBy';
+import { useState } from 'react';
 
 const generateParagraphs = (dislikes: Like[]) => (
   dislikes.map((dislike, ix) => {
@@ -11,9 +13,18 @@ const generateParagraphs = (dislikes: Like[]) => (
 );
 
 export default function Dislikes() {
+  const command = '$ getsebool -a | grep $SMALLKIRBY | pretty ';
+  const [shown, setShown] = useState(false);
+
   return (
     <div>
-      {generateParagraphs(dislikesData)}
+      <PrintCharBy str={command} intervalMs={50} callback={() => {
+        setShown(true);
+      }} />
+
+      {shown &&
+        generateParagraphs(dislikesData)
+      }
     </div>
   );
 };
