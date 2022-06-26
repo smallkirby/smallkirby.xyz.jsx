@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   font-size: 16px;
   word-spacing: 1px;
@@ -14,7 +18,7 @@ html {
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0.3rem;
+  margin: 0rem;
 }
 
 .button--green {

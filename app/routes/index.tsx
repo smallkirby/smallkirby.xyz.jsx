@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 export default function Index() {
   return (
     <div>
       <ul>
         <li>
-          <a href='/about'>About</a>
+          <Link to='/about'>About</Link>
         </li>
       </ul>
     </div>
