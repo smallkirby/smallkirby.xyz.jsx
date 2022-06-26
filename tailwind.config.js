@@ -24,8 +24,13 @@ module.exports = {
         },
         skgreen: {
           light: '#84a87f',
-          DEFAULT: '#9aab46',
+          DEFAULT: '#4E9A06',
           dark: '#48680e',
+        },
+        skblue: {
+          light: '#84A87F',
+          DEFAULT: '#84A87F',
+          dark: '#84A87F',
         },
       },
     },

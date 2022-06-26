@@ -1,5 +1,7 @@
+import Shell from '../shell/Shell';
+
 export default function TmuxPane() {
   return (
-    <div>bash</div>
+    <Shell />
   );
 };

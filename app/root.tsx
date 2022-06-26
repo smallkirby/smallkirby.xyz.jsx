@@ -56,7 +56,9 @@ export default function App() {
               `sticky py-8 px-2 border-r-2 border-[#ebdbb2] overflow-y-scroll overflow-x-scroll
               ${isTmuxOpen ? 'w-1/4' : 'w-10'}`}
           >
-            {isTmuxOpen && <TmuxPane />}
+            <div className={`${isTmuxOpen ? 'block' : 'hidden'}`}>
+              <TmuxPane />
+            </div>
             <div className='absolute right-0 top-1/2'>
               <TmuxOpener stateChanged={(open) => setIsTmuxOpen(open)}/>
             </div>
