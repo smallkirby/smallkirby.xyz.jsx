@@ -9,7 +9,9 @@ export default function PrintCharBy(props: {str: string, intervalMs: number, cal
       setCurstr((curstr) => {
         if (curstr.length === originalStr.length - 1) {
           clearInterval(handler);
-          props.callback();
+          setInterval(() => {
+            props.callback();
+          }, props.intervalMs * 2);
         }
         return originalStr.substring(0, curstr.length + 1);
       });

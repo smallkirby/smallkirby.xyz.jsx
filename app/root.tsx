@@ -46,7 +46,7 @@ export default function App() {
       <body>
         <Header title={title} />
 
-        <div className='py-8'>
+        <div className='py-8 px-2'>
           <Outlet />
         </div>
         <ScrollRestoration />
