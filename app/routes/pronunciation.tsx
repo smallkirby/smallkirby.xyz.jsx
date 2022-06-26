@@ -12,15 +12,18 @@ const generateParagraphs = (prons: PronType[]) => (
   })
 );
 
-export default function Pronunciation() {
+export default function Pronunciation({ preRender = false }: {preRender?: boolean}) {
   const command = '$ diff /home/user/smallkirby/vocabulary /var/www/worlds/vocabulary | uniq ';
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(preRender);
 
   return (
     <div>
-      <PrintCharBy str={command} intervalMs={50} callback={() => {
-        setShown(true);
-      }} />
+      {!preRender ?
+        <PrintCharBy str={command} intervalMs={50} callback={() => {
+          setShown(true);
+        }} /> :
+        command
+      }
 
       {shown &&
         generateParagraphs(vocabs)

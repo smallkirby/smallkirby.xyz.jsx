@@ -12,15 +12,18 @@ const generateParagraphs = (dislikes: Like[]) => (
   })
 );
 
-export default function Dislikes() {
+export default function Dislikes({ preRender = false }: {preRender?: boolean}) {
   const command = '$ getsebool -a | grep $SMALLKIRBY | pretty ';
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(preRender);
 
   return (
     <div>
-      <PrintCharBy str={command} intervalMs={50} callback={() => {
-        setShown(true);
-      }} />
+      {!preRender ?
+        <PrintCharBy str={command} intervalMs={50} callback={() => {
+          setShown(true);
+        }} /> :
+        command
+      }
 
       {shown &&
         generateParagraphs(dislikesData)

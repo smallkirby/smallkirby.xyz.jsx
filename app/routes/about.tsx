@@ -2,15 +2,18 @@ import ProfileBox from '../components/profile/profileBox';
 import PrintCharBy from '~/components/common/printCharBy';
 import { useState } from 'react';
 
-export default function About() {
+export default function About({ preRender = false }: {preRender?: boolean}) {
   const command = '$ whoami | pretty';
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(preRender);
 
   return (
     <div>
-      <PrintCharBy str={command} intervalMs={100} callback={() => {
-        setShown(true);
-      }} />
+      {!preRender ?
+        <PrintCharBy str={command} intervalMs={100} callback={() => {
+          setShown(true);
+        }} /> :
+        command
+      }
 
       {shown &&
         <ProfileBox />
