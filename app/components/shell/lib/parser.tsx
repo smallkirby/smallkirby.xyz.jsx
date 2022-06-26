@@ -1,3 +1,5 @@
+import Ls from './ls';
+
 function ErrorMsg(props: {command: string}) {
   return (
     <div>
@@ -7,7 +9,9 @@ function ErrorMsg(props: {command: string}) {
 }
 
 export const shellParse = (command: string): JSX.Element => {
-  switch (command.trim()) {
+  switch (command.trim().split(' ')[0]) {
+  case 'ls':
+    return <Ls args={command.split(' ')}/>;
   default:
     return <ErrorMsg command={command} />;
   }

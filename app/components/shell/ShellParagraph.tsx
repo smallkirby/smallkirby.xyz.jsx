@@ -24,7 +24,7 @@ export default function ShellParagraph(props: {callback: () => void}) {
   };
 
   return (
-    <div className="">
+    <div className="mb-2">
       <div>
         <span className='text-skgreen mr-1'>{user}</span>
         <span className='text-skblue-dark'>@</span>

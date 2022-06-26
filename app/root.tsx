@@ -53,8 +53,8 @@ export default function App() {
         <div className='flex h-screen'>
           <div
             className={
-              `sticky py-8 px-2 border-r-2 border-[#ebdbb2] overflow-y-scroll overflow-x-scroll
-              ${isTmuxOpen ? 'w-1/4' : 'w-10'}`}
+              `sticky pt-8 mb-7  px-2 border-r-2 border-[#ebdbb2] overflow-y-scroll overflow-x-scroll resize-x
+              ${isTmuxOpen ? 'w-2/5' : 'w-10'}`}
           >
             <div className={`${isTmuxOpen ? 'block' : 'hidden'}`}>
               <TmuxPane />

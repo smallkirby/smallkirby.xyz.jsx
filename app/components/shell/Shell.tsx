@@ -5,7 +5,7 @@ export default function Shell() {
   const [shellNum, setShellNum] = useState(1);
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full overflow-x-visible">
       {Array(shellNum).fill(0).map((_, ix) => (
         <ShellParagraph key={ix} callback={() => setShellNum((val) => val + 1)} />
       ))}

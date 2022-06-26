@@ -48,31 +48,6 @@ html {
   width: 100%;
 }
 
-#tmux-pane {
-  max-height: calc(100vh - 2em);
-  height: calc(100vh - 2em);
-  width: 24rem;
-  padding-bottom: 1.0em;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  flex-shrink: 0;
-
-  resize: horizontal;
-
-  position: sticky;
-  top: 0em;
-}
-
-@media only screen and (max-width: 699px) {
-  #tmux-pane {
-    max-width: 0px;
-  }
-
-  #body-wrapper {
-    padding-left: 0px;
-  }
-}
-
 body {
   font-family: "Ubuntu Mono", monospace;
   background-color: #32302f;
