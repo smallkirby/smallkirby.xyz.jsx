@@ -13,8 +13,8 @@ export default function Footer() {
         bg-skblack-dark
       "
     >
-      <div className="flex justify-items-stretch justify-between">
-        <div className="md:flex hidden justify-start w-1/5 text-lfet">
+      <div className="flex justify-items-stretch justify-center md:justify-between">
+        <div className="hidden md:flex justify-start w-1/5 text-lfet">
           <div className="mx-5">
             <p>NORMAL</p>
           </div>
@@ -23,11 +23,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="md:w-auto w-2/5">
+        <div className="md:w-2/5 w-full">
           <p>smallkirby few rights reserved.</p>
         </div>
 
-        <div className="md:flex justify-end w-1/5 text-right">
+        <div className="hidden md:flex justify-end w-1/5 text-right">
           <div className="mx-5">
             <p>0% 1/152 ln:1</p>
           </div>

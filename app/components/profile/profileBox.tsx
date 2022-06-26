@@ -7,9 +7,9 @@ export default function ProfileBox() {
         />
         <div className="text-center">
           <div className="mb-2">
-            <p>student of University of Tokyo</p>
+            <p>Master's course student of University of Tokyo</p>
             <p>major in electronics and photonics (undergraduate)</p>
-            <p>major in OS, virtualization, security (graduate)</p>
+            <p>major in OS, virtualization, and security (graduate)</p>
             <p>interested in <em>undefined</em></p>
           </div>
           <div className="mt-4">
