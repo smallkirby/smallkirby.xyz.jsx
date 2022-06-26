@@ -10,6 +10,9 @@ export default function Index() {
         <li>
           <Link to='/likes'>Likes</Link>
         </li>
+        <li>
+          <Link to='/dislikes'>Dislikes</Link>
+        </li>
       </ul>
     </div>
   );
