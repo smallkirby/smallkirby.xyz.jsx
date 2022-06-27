@@ -54,7 +54,7 @@ export default function App() {
           <div
             className={
               `sticky pt-8 mb-7  px-2 border-r-2 border-[#ebdbb2] overflow-y-scroll overflow-x-scroll resize-x
-              ${isTmuxOpen ? 'w-2/5' : 'w-10'}`}
+              ${isTmuxOpen ? 'w-2/5' : 'w-10'} hidden md:block`}
           >
             <div className={`${isTmuxOpen ? 'block' : 'hidden'}`}>
               <TmuxPane />
