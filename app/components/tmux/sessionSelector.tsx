@@ -3,12 +3,22 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import type { RouteEntry } from 'typings/route';
 import { routeEntries } from 'data/routs';
 
-function SessionSelectorEntry(props: {ent: RouteEntry, index: number, selected: Boolean, isCurrentPage: Boolean}) {
+function SessionSelectorEntry(
+  props: {
+    ent: RouteEntry,
+    index: number,
+    selected: boolean,
+    isCurrentPage: Boolean,
+    onClicked: (index: number, alreadySelected: boolean) => void
+  },
+) {
   return (
     <div>
       <button
         className={`w-full text-left pl-2
-        ${props.selected ? 'bg-[#ebdbb2] text-[#32302f]' : 'text-[#ebdbb2] bg-[#32302f]'}`}>
+        ${props.selected ? 'bg-[#ebdbb2] text-[#32302f]' : 'text-[#ebdbb2] bg-[#32302f]'}`}
+        onClick={() => props.onClicked(props.index, props.selected)}
+      >
         {props.ent.name}: {props.isCurrentPage ?
           <span>1 windows (attached)</span> :
           <span>0 windows</span>
@@ -34,6 +44,15 @@ export default function SessionSelector(props: {quitCallback: () => void}) {
   const [selectedIndex, setSelectedIndex] = useState(
     routeEntries.findIndex((ent) => ent.url === location.pathname),
   );
+
+  const handleClicked = (index: number, alreadySelected: boolean) => {
+    if (alreadySelected) {
+      props.quitCallback();
+      navigate(routeEntries[index].url, { replace: true });
+    } else {
+      setSelectedIndex(index);
+    }
+  };
 
   const handleArrowKeyPress = (e: KeyboardEvent) => {
     switch (e.key) {
@@ -76,7 +95,9 @@ export default function SessionSelector(props: {quitCallback: () => void}) {
         {routeEntries.map((ent, ix) => (
           <SessionSelectorEntry
             key={ix} ent={ent} index={ix}
-            selected={ix === selectedIndex} isCurrentPage={location.pathname === ent.url}
+            selected={ix === selectedIndex}
+            isCurrentPage={location.pathname === ent.url}
+            onClicked={handleClicked}
           />
         ))}
       </div>
