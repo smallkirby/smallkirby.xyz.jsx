@@ -1,18 +1,31 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function ShellInput(props: {onEntered: (input: string) => void}) {
+export default function ShellInput(
+  { onEntered, preRenderCom = null }: {onEntered: (input: string) => void, preRenderCom?: string | null},
+) {
   const [isEnabled, setIsEnabled] = useState(true);
+
+  const execEnter = (input: string) => {
+    setIsEnabled(false);
+    onEntered(input);
+  };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (!isEnabled) return;
 
     if (e.key === 'Enter') {
-      const input = e.currentTarget.value;
       e.preventDefault();
-      setIsEnabled(false);
-      props.onEntered(input);
+      execEnter(e.currentTarget.value);
     }
   };
+
+  useEffect(() => {
+    console.log(preRenderCom);
+    if (preRenderCom) {
+      execEnter(preRenderCom);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="w-full flex">
@@ -24,6 +37,7 @@ export default function ShellInput(props: {onEntered: (input: string) => void}) 
           className="w-full border-none bg-skblack-dark focus:border-none focus:outline-none"
           onKeyDown={(e) => handleKeyDown(e)}
           disabled={!isEnabled}
+          placeholder={preRenderCom ? preRenderCom : ''}
         />
       </div>
     </div>

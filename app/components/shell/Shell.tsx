@@ -7,7 +7,7 @@ export default function Shell() {
   return (
     <div className="h-full w-full overflow-x-visible">
       {Array(shellNum).fill(0).map((_, ix) => (
-        <ShellParagraph key={ix} callback={() => setShellNum((val) => val + 1)} />
+        <ShellParagraph key={ix} preRenderCom={ix === 0 ? 'ls' : null} callback={() => setShellNum((val) => val + 1)} />
       ))}
     </div>
   );

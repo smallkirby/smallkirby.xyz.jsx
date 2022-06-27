@@ -8,7 +8,9 @@ export function ShellResult(props: {command: string}) {
   return shellParse(props.command);
 }
 
-export default function ShellParagraph(props: {callback: () => void}) {
+export default function ShellParagraph(
+  { callback, preRenderCom = null }: {callback: () => void, preRenderCom?: string | null},
+) {
   const user = 'smallkirby';
   const host = 'xyz';
   const location = useLocation();
@@ -20,7 +22,7 @@ export default function ShellParagraph(props: {callback: () => void}) {
   const handleInput = (input: string) => {
     setCommand(input);
     setIsActive(false);
-    props.callback();
+    callback();
   };
 
   return (
@@ -33,7 +35,7 @@ export default function ShellParagraph(props: {callback: () => void}) {
         <span className='text-[#BE1BD9] mx-1'>{timeStr}</span>
       </div>
 
-      <ShellInput onEntered={handleInput}/>
+      <ShellInput onEntered={handleInput} preRenderCom={preRenderCom}/>
 
       {!isActive && <ShellResult command={command}/>}
     </div>
