@@ -4,6 +4,7 @@ import About from 'app/routes/about';
 import Likes from 'app/routes/likes';
 import Dislikes from 'app/routes/dislikes';
 import Pronunciation from 'app/routes/pronunciation';
+import Trash from '~/routes/trash';
 
 export const routeEntries: RouteEntry[] = [
   {
@@ -30,5 +31,10 @@ export const routeEntries: RouteEntry[] = [
     name: 'pronunciation',
     url: '/pronunciation',
     component: () => <Pronunciation preRender={true}/>,
+  },
+  {
+    name: 'trash',
+    url: '/trash',
+    component: () => <Trash preRender={true}/>,
   },
 ];

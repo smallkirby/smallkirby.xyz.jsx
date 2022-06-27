@@ -21,7 +21,6 @@ export default function ShellInput(
   };
 
   useEffect(() => {
-    console.log(preRenderCom);
     if (preRenderCom) {
       execEnter(preRenderCom);
     }
