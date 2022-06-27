@@ -21,9 +21,18 @@ export const links: LinksFunction = () => {
 };
 
 export const meta: MetaFunction = () => ( {
-  charset: 'utf-8',
-  title: 'smallkirby.xyz',
-  viewport: 'width=device-width,initial-scale=1',
+  'charset': 'utf-8',
+  'title': 'smallkirby.xyz',
+  'description': 'Make Nirugiri Greater...',
+  'viewport': 'width=device-width,initial-scale=1',
+  'og:title': 'smallkirby.xyz',
+  'og:url': 'https://smallkirby.xyz',
+  'og:description': 'Make Nirugiri Greater...',
+  'og:image': 'https://smallkirby.xyz/img/simple-transparent.png',
+  'og:site_name': 'smallkirby.xyz',
+  'twitter:card': 'summary_large_image',
+  'twitter:creator': '@smallkirby',
+  'twitter:site': '@smallkirby',
 } );
 
 export default function App() {
