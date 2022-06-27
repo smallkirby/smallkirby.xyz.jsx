@@ -1,26 +1,33 @@
 {
   "private": true,
   "sideEffects": false,
+  "main": "build/index.js",
   "scripts": {
     "lint-fix": "npx eslint --fix ./*.js ./app/**/*.{js,jsx,ts,tsx}",
     "lint": "npx eslint ./*.js ./app/**/*.{js,jsx,ts,tsx}",
     "build": "npm run build:css && remix build",
     "build:css": "tailwindcss -m -i ./styles/index.css -o ./app/styles/index.css",
-    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev": "remix build && run-p dev:*",
     "dev:css": "tailwindcss -w -i ./styles/index.css -o ./app/styles/index.css",
-    "start": "remix-serve build"
+    "dev:remix": "remix watch",
+    "dev:miniflare": "cross-env NODE_ENV=development miniflare ./build/index.js --watch",
+    "start": "cross-env NODE_ENV=production miniflare ./build/index.js",
+    "deploy": "npm run build && wrangler publish"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
+    "@remix-run/cloudflare": "^1.6.1",
+    "@remix-run/cloudflare-workers": "^1.6.1",
     "@remix-run/node": "^1.6.1",
     "@remix-run/react": "^1.6.1",
     "@remix-run/serve": "^1.6.1",
     "@types/moment": "^2.13.0",
     "autoprefixer": "^10.4.7",
     "concurrently": "^7.2.2",
+    "cross-env": "^7.0.3",
     "moment": "^2.29.3",
     "postcss": "^8.4.14",
     "react": "^17.0.2",
@@ -35,6 +42,7 @@
     "@types/react-dom": "^17.0.17",
     "eslint": "^8.15.0",
     "eslint-config-google": "^0.14.0",
+    "miniflare": "^2.5.1",
     "typescript": "^4.6.4"
   },
   "engines": {

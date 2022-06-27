@@ -1,18 +1,18 @@
-name: Build and Lint
+name: Deploy to Cloudflare
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Build and Lint"]
     branches:
       - master
       - main
-  pull_request:
-    branches:
-      - master
-      - main
+    types:
+      - completed
 
 jobs:
-  build:
+  deploy:
     runs-on: ${{ matrix.os }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     strategy:
       matrix:
@@ -40,8 +40,11 @@ jobs:
       - name: 👨🏻‍💻 Install dependencies
         run: npm ci --prefer-offline --no-audit
 
-      - name: ✏️ Run linter
-        run: npm run lint
+      - name: 🦀 Install wrangler
+        run: npm i @cloudflare/wrangler -g
 
-      - name: 💚 Generate build
-        run: npm run build
+      - name: 🚀 Deploy
+        run: npm run deploy
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
