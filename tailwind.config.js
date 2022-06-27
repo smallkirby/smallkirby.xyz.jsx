@@ -28,7 +28,7 @@ module.exports = {
           dark: '#48680e',
         },
         skblue: {
-          light: '#84A87F',
+          light: '#34E2E2',
           DEFAULT: '#84A87F',
           dark: '#84A87F',
         },

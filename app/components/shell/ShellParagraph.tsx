@@ -4,7 +4,7 @@ import moment from 'moment';
 import ShellInput from './ShellInput';
 import { shellParse } from './lib/parser';
 
-function ShellResult(props: {command: string}) {
+export function ShellResult(props: {command: string}) {
   return shellParse(props.command);
 }
 

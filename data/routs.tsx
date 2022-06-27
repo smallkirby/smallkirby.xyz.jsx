@@ -9,7 +9,7 @@ export const routeEntries: RouteEntry[] = [
   {
     name: 'index',
     url: '/',
-    component: () => <Index />,
+    component: () => <Index preRender={true}/>,
   },
   {
     name: 'about',
