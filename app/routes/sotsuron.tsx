@@ -1,9 +1,70 @@
+import { useState } from 'react';
+import PrintCharBy from '../components/common/printCharBy';
 import SotsuronChart from '../components/sotsuron/SotsuronChart';
 
+function SotsuronHelp() {
+  return (
+    <div className='ml-3 mt-2 mb-4'>
+      <div>
+        <span className='text-skgreen-light'>Background</span>
+        : I had to write a <b className='italic'>bachelor thesis about photonics</b>
+        , though I'm absolutely not good at...
+      </div>
+      <div>
+        <span className='text-skgreen-light'>Description</span>
+        : I endured the hard time by tweeting what's in my head.
+      </div>
+      <div>
+        <span className='text-skgreen-light'>About</span>
+        : Below data is from the collection of tweets I tweeted during write of the thesis.
+      </div>
+      <div>
+        <span className='text-skgreen-light'>Source</span>
+        : My secret account of Twitter.
+      </div>
+      <div>
+        <span className='text-skgreen-light'>Deadline</span>
+        : 2022/02/09 11:00 AM
+      </div>
+
+      <div className='mt-2 text-sm text-skwhite-dark'>
+        (Data collection finishes on 2022/02/09, and data is now made static.)
+      </div>
+    </div>
+  );
+}
+
 export default function Sotsuron({ preRender = false }: {preRender: boolean}) {
+  const comHelp = '$ python3 ~/Documents/sotsuron/plot.py --help';
+  const [helpComShown, setHelpComShown] = useState(preRender);
+  const comPlot = '$ python3 ~/Documents/sotsuron/plot.py --plot';
+  const [comPlotShown, setComPlotShown] = useState(preRender);
+
   return (
     <div>
-      <SotsuronChart />
+      {!preRender ?
+        <PrintCharBy str={comHelp} intervalMs={5} callback={() => {
+          setHelpComShown(true);
+        }} /> :
+        comHelp
+      }
+
+      {(preRender || helpComShown) &&
+        <SotsuronHelp />
+      }
+
+      {helpComShown &&
+        <PrintCharBy str={comPlot} intervalMs={5} callback={() => {
+          setComPlotShown(true);
+        }} />
+      }
+
+      {comPlotShown &&
+        <div className='px-1 md:px-4 w-full pt-2'>
+          <SotsuronChart />
+        </div>
+      }
+
     </div>
   );
 }

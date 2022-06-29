@@ -80,6 +80,7 @@ const yScale = {
 
 const options = {
   responsive: true,
+  maintainAspectRatio: false,
   scales: {
     x: xScale,
     y: yScale,
@@ -130,6 +131,6 @@ const data = {
 export default function SotsuronChart() {
   return (
     // @ts-ignore
-    <Line options={options} data={data} />
+    <Line options={options} data={data} className='h-96 md:h-[40em]' />
   );
 }
