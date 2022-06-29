@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SotsuronTweetPanel from '~/components/sotsuron/SotsuronTweetPanel';
 import PrintCharBy from '../components/common/printCharBy';
 import SotsuronChart from '../components/sotsuron/SotsuronChart';
 
@@ -28,7 +29,7 @@ function SotsuronHelp() {
       </div>
 
       <div className='mt-2 text-sm text-skwhite-dark'>
-        (Data collection finishes on 2022/02/09, and data is now made static.)
+        (Data collection finished on 2022/02/09, and data is now made static.)
       </div>
     </div>
   );
@@ -39,11 +40,13 @@ export default function Sotsuron({ preRender = false }: {preRender: boolean}) {
   const [helpComShown, setHelpComShown] = useState(preRender);
   const comPlot = '$ python3 ~/Documents/sotsuron/plot.py --plot';
   const [comPlotShown, setComPlotShown] = useState(preRender);
+  const comTweet = '$ /usr/local/sbin/twetter-cli -d ~/Documents/sotsuron/tweets.log --tweet';
+  const [comTweetShown, setComTweetShown] = useState(preRender);
 
   return (
     <div>
       {!preRender ?
-        <PrintCharBy str={comHelp} intervalMs={5} callback={() => {
+        <PrintCharBy str={comHelp} intervalMs={50} callback={() => {
           setHelpComShown(true);
         }} /> :
         comHelp
@@ -54,7 +57,7 @@ export default function Sotsuron({ preRender = false }: {preRender: boolean}) {
       }
 
       {helpComShown &&
-        <PrintCharBy str={comPlot} intervalMs={5} callback={() => {
+        <PrintCharBy str={comPlot} intervalMs={50} callback={() => {
           setComPlotShown(true);
         }} />
       }
@@ -63,6 +66,18 @@ export default function Sotsuron({ preRender = false }: {preRender: boolean}) {
         <div className='px-1 md:px-4 w-full pt-2'>
           <SotsuronChart />
         </div>
+      }
+
+      {comPlotShown &&
+        <div className='mt-4'>
+          <PrintCharBy str={comTweet} intervalMs={50} callback={() => {
+            setComTweetShown(true);
+          }} />
+        </div>
+      }
+
+      {comTweetShown &&
+        <SotsuronTweetPanel />
       }
 
     </div>
