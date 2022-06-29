@@ -5,6 +5,7 @@ import Likes from 'app/routes/likes';
 import Dislikes from 'app/routes/dislikes';
 import Pronunciation from 'app/routes/pronunciation';
 import Trash from '~/routes/trash';
+import Sotsuron from '~/routes/sotsuron';
 
 export const routeEntries: RouteEntry[] = [
   {
@@ -36,5 +37,10 @@ export const routeEntries: RouteEntry[] = [
     name: 'trash',
     url: '/trash',
     component: () => <Trash preRender={true}/>,
+  },
+  {
+    name: 'sotsuron',
+    url: '/sotsuron',
+    component: () => <Sotsuron preRender={true}/>,
   },
 ];
