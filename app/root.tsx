@@ -1,4 +1,5 @@
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
+import { redirect } from '@remix-run/cloudflare';
 // @ts-ignore
 import styles from './styles/index.css';
 import { useEffect, useState } from 'react';
@@ -34,6 +35,10 @@ export const meta: MetaFunction = () => ( {
   'twitter:creator': '@smallkirby',
   'twitter:site': '@smallkirby',
 } );
+
+export function CatchBoundary() {
+  return redirect('/404');
+}
 
 export default function App() {
   const location = useLocation();
