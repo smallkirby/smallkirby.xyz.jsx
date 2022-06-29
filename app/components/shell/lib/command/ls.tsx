@@ -37,7 +37,7 @@ function LsParagraph(props: {path: string}) {
 }
 
 export default function Ls(props: {args: string[]}) {
-  const [pathes, setPathes] = useState(props.args.slice(1));
+  const [pathes, setPathes] = useState(props.args);
 
   useEffect(() => {
     if (pathes.length === 0) {
