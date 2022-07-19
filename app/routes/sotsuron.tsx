@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import SotsuronTweetPanel from '~/components/sotsuron/SotsuronTweetPanel';
-import PrintCharBy from '../components/common/printCharBy';
-import SotsuronChart from '../components/sotsuron/SotsuronChart';
+import SotsuronTweetPanel from 'components/sotsuron/SotsuronTweetPanel';
+import PrintCharBy from 'components/common/printCharBy';
+import SotsuronChart from 'components/sotsuron/SotsuronChart';
 
 function SotsuronHelp() {
   return (

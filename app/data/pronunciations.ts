@@ -1,4 +1,4 @@
-import type { Pronunciation } from '../typings/pronunciation';
+import type { Pronunciation } from 'typings/pronunciation';
 
 export const vocabs: Pronunciation[] = [
   {

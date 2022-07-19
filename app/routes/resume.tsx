@@ -1,9 +1,8 @@
-import ProfileBox from 'components/profile/profileBox';
-import PrintCharBy from 'components/common/printCharBy';
 import { useState } from 'react';
+import PrintCharBy from 'components/common/printCharBy';
 
-export default function About({ preRender = false }: {preRender?: boolean}) {
-  const command = '$ whoami | pretty';
+export default function Resume({ preRender = false }: {preRender?: boolean}) {
+  const command = '$ history | tail -n 10';
   const [shown, setShown] = useState(preRender);
 
   return (
@@ -16,8 +15,8 @@ export default function About({ preRender = false }: {preRender?: boolean}) {
       }
 
       {shown &&
-        <ProfileBox />
+        <div className='ml-4 mt-4'>undefined</div>
       }
     </div>
   );
-}
+};

@@ -1,7 +1,7 @@
 import type { Pronunciation as PronType } from 'typings/pronunciation';
 import { vocabs } from 'data/pronunciations';
-import PronunciationParagraph from '../components/pronunciation/pronunciationParagraph';
-import PrintCharBy from '../components/common/printCharBy';
+import PronunciationParagraph from 'components/pronunciation/pronunciationParagraph';
+import PrintCharBy from 'components/common/printCharBy';
 import { useState } from 'react';
 
 const generateParagraphs = (prons: PronType[]) => (

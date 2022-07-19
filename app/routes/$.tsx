@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import PrintCharBy from '../components/common/printCharBy';
+import PrintCharBy from 'components/common/printCharBy';
 
 export default function NotFound() {
   const path = useLocation().pathname.substring(1);

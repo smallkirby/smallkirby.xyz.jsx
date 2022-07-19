@@ -1,11 +1,12 @@
 import type { RouteEntry } from 'typings/route';
-import Index from 'app/routes/index';
-import About from 'app/routes/about';
-import Likes from 'app/routes/likes';
-import Dislikes from 'app/routes/dislikes';
-import Pronunciation from 'app/routes/pronunciation';
-import Trash from '~/routes/trash';
-import Sotsuron from '~/routes/sotsuron';
+import Index from 'routes/index';
+import About from 'routes/about';
+import Likes from 'routes/likes';
+import Dislikes from 'routes/dislikes';
+import Pronunciation from 'routes/pronunciation';
+import Trash from 'routes/trash';
+import Sotsuron from 'routes/sotsuron';
+import Resume from 'routes/resume';
 
 export const routeEntries: RouteEntry[] = [
   {
@@ -42,5 +43,10 @@ export const routeEntries: RouteEntry[] = [
     name: 'sotsuron',
     url: '/sotsuron',
     component: () => <Sotsuron preRender={true}/>,
+  },
+  {
+    name: 'resume',
+    url: '/resume',
+    component: () => <Resume preRender={true}/>,
   },
 ];

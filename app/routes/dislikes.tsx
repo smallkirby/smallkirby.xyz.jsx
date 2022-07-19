@@ -1,7 +1,7 @@
 import type { Like } from 'typings/likes';
 import { dislikes as dislikesData } from 'data/dislikes';
-import LikeParagraph from '../components/likes/LikeParagraph';
-import PrintCharBy from '../components/common/printCharBy';
+import LikeParagraph from 'components/likes/LikeParagraph';
+import PrintCharBy from 'components/common/printCharBy';
 import { useState } from 'react';
 
 const generateParagraphs = (dislikes: Like[]) => (

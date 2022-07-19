@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import PrintCharBy from '~/components/common/printCharBy';
-import { ShellResult } from '~/components/shell/ShellParagraph';
+import PrintCharBy from 'components/common/printCharBy';
+import { ShellResult } from 'components/shell/ShellParagraph';
 
 export default function Index({ preRender = false }: {preRender?: boolean}) {
   const whoamiCom = '$ whoami';
