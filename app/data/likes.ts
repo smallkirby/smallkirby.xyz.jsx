@@ -308,14 +308,9 @@ export const likes: Like[] = [
         description: 'covered by KudouChitose,2019',
       },
       {
-        name: '空想電車',
-        link: 'https://youtu.be/cXE79nsZEzk',
-        description: 'vivid undress,2018',
-      },
-      {
-        name: 'さよなら人類',
-        link: 'https://youtu.be/cXE79nsZEzk',
-        description: 'たま,1990 (cover by edda,2018)',
+        name: 'Green Day - Boulevard of Broken Dreams Fingerstyle',
+        link: 'https://youtu.be/ZvLT_J9Uv4o',
+        description: 'by Accoustic Trench',
       },
       {
         name: 'Youtube Playlist',
