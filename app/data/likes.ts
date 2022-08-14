@@ -31,6 +31,12 @@ export const likes: Like[] = [
           'switch,2019',
       },
       {
+        name: 'Xenoblade Chronicles 3',
+        link: 'https://www.nintendo.co.jp/switch/az3ha/index.html',
+        description:
+          'switch,2022',
+      },
+      {
         name: 'Doshin the Giant',
         link: 'https://www.nintendo.co.jp/ngc/gkdj/',
         description: 'GC,2002',
