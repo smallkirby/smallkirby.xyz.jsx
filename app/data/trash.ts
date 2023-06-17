@@ -45,7 +45,7 @@ export const trashes: Trash[] = [
     `,
   },
   {
-    title: 'Markdow.erb',
+    title: 'Markdown.erb',
     title_link: 'https://github.com/smallkirby/Markdown.erb',
     image_path: 'https://github.com/smallkirby/Markdown.erb/raw/master/img/demo.gif',
     description: stripIndent`
