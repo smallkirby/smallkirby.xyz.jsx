@@ -272,21 +272,12 @@ export const likes: Like[] = [
         description: 'Asahi',
       },
       {
-        name: '午後の紅茶ロイヤルミルクティ',
-        description: 'Kirin',
+        name: 'Helthya',
+        description: 'Kao Corporation',
       },
       {
         name: 'Kuro Label',
         description: 'SapporoBeer',
-      },
-      {
-        name: '南部美人',
-        description: '株式会社南部美人',
-        link: 'https://www.nanbubijin.co.jp/',
-      },
-      {
-        name: '獺祭',
-        description: '旭酒造',
       },
       {
         name: 'RedBull',
@@ -331,22 +322,6 @@ export const likes: Like[] = [
   {
     title: 'Youtube',
     ents: [
-      {
-        name: 'マオメエアニメ',
-        link: 'https://www.youtube.com/channel/UCZNDlsZU0StifdExCdRaRFg',
-      },
-      {
-        name: 'ももと天空',
-        link: 'https://www.youtube.com/c/MomoTen',
-      },
-      {
-        name: 'もちまる日記',
-        link: 'https://www.youtube.com/c/%E3%82%82%E3%81%A1%E3%81%BE%E3%82%8B%E6%97%A5%E8%A8%98',
-      },
-      {
-        name: 'もののけ',
-        link: 'https://www.youtube.com/channel/UCTumeHMtMF_JlbX2w4IAbAA',
-      },
       {
         name: 'Maedakun　”Maesuma”SSBU Tournament',
         link: 'https://www.youtube.com/channel/UC1wbp2hvbSfnhiY14fTd9fg',
