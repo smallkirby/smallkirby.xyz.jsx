@@ -13,7 +13,7 @@ export default function ProfileBox() {
             <p>interested in <em>undefined</em></p>
           </div>
           <div className="mt-4">
-            <p>blog: <a href="https://smallkirby.hatenablog.com">newbie dive into binary</a></p>
+            <p>blog: <a href="https://blog.smallkirby.com/">Newbie Dive Into Binary</a></p>
             <p>github: <a href="https://github.com/smallkirby">smallkirby</a></p>
             <p>twitter: <a href="https://twitter.com/smallkirby">@smallkirby</a></p>
           </div>
