@@ -6,3 +6,7 @@ updates:
       interval: "weekly"
     reviewers:
       - "smallkirby"
+    groups:
+      all:
+        pattern:
+          - "*"
