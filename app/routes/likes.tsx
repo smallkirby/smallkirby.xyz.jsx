@@ -30,4 +30,4 @@ export default function Likes({ preRender = false }: {preRender?: boolean}) {
       }
     </div>
   );
-};
+}

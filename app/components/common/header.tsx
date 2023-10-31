@@ -45,4 +45,4 @@ export default function Header( props: { title: string } ) {
       }
     </div>
   );
-};
+}

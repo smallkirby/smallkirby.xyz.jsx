@@ -50,4 +50,4 @@ export default function PronunciationParagraph(props: {pron: Pronunciation}) {
       { generateParagraphs(pron) }
     </div>
   );
-};
+}

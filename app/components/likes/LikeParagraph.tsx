@@ -37,4 +37,4 @@ export default function LikeParagraph(props: {like: Like}) {
       {likeEntSentence(props.like)}
     </div>
   );
-};
+}
