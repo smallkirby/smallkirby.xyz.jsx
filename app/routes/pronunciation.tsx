@@ -30,4 +30,4 @@ export default function Pronunciation({ preRender = false }: {preRender?: boolea
       }
     </div>
   );
-};
+}

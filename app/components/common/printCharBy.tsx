@@ -26,4 +26,4 @@ export default function PrintCharBy(props: {str: string, intervalMs: number, cal
       {curstr}
     </div>
   );
-};
+}

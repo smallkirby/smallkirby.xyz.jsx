@@ -4,4 +4,4 @@ export default function TmuxPane() {
   return (
     <Shell />
   );
-};
+}
