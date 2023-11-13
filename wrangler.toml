@@ -2,7 +2,7 @@ name = "xyz"
 
 workers_dev = true
 compatibility_date = "2023-11-13"
-main = "index.js"
+main = "build/index.js"
 
 [site]
 bucket = "./public"
