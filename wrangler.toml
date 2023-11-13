@@ -1,10 +1,8 @@
 name = "xyz"
-type = "javascript"
 
-route = ""
 workers_dev = true
-
-compatibility_date = "2022-06-27"
+compatibility_date = "2023-11-13"
+main = "index.js"
 
 [site]
 bucket = "./public"
@@ -12,6 +10,3 @@ entry-point = "."
 
 [build]
 command = "npm run build"
-
-[build.upload]
-format="service-worker"
