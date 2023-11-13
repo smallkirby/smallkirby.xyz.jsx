@@ -41,7 +41,7 @@ jobs:
         run: npm ci --prefer-offline --no-audit
 
       - name: 🦀 Install wrangler
-        run: npm i @cloudflare/wrangler -g
+        run: npm i wrangler@latest -g
 
       - name: 🚀 Deploy
         run: npm run deploy
