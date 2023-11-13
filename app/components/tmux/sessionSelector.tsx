@@ -26,7 +26,7 @@ function SessionSelectorEntry(
       </button>
     </div>
   );
-}
+};
 
 function SessionPreview(props: {ent: RouteEntry}) {
   return (
@@ -105,4 +105,4 @@ export default function SessionSelector(props: {quitCallback: () => void}) {
       <SessionPreview ent={routeEntries[selectedIndex]} />
     </div>
   );
-}
+};

@@ -8,5 +8,5 @@ updates:
       - "smallkirby"
     groups:
       all:
-        patterns:
+        pattern:
           - "*"

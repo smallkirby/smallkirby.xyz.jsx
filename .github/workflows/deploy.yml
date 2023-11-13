@@ -17,20 +17,20 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node: [18]
+        node: [16]
 
     steps:
       - name: 🛎 Checkout
         uses: actions/checkout@master
 
-      - name: 🏗 Use Node.js 18.x
-        uses: actions/setup-node@v4.0.0
+      - name: 🏗 Use Node.js 16.x
+        uses: actions/setup-node@v2.1.5
         with:
           node-version: ${{ matrix.node }}
           check-latest: true
 
       - name: 📦 Cache node_modules
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v2.1.4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -41,10 +41,10 @@ jobs:
         run: npm ci --prefer-offline --no-audit
 
       - name: 🦀 Install wrangler
-        run: npm i wrangler@latest -g
+        run: npm i @cloudflare/wrangler -g
 
       - name: 🚀 Deploy
         run: npm run deploy
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
